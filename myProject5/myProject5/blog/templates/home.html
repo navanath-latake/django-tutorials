@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <title>#1 Template Basic</title>
+</head>
+<body>
+    <h1>Template Basic</h1>
+    <p>This is simple template to demonstrate basic HTMl structure</p>
+    <p>Welcome to the blog home page!</p>
+
+{% comment %}single Variable{% endcomment %}
+
+<p>Name:{{name}}</p>
+<p>age:{{age}}</p>
+
+{% comment %}List Access{% endcomment %}
+
+
+<p>All skills:{{skills}} </p>
+
+<p>First skill:{{skills.0}} </p>
+<p>Second skill:{{skills.1}} </p>
+<p>Third skill:{{skills.2}} </p>
+
+{% comment %}Object Attributes Accessing{% endcomment %}
+
+<p>User Name: {{user.name}} </p>
+<p>User Age: {{user.age}} </p>
+
+{% comment %}Dictionary Accessing{% endcomment %}
+<h2>Blog Information</h2>
+<p>Title: {{blog.title}} </p>
+<p>content: {{blog.content}} </p>
+<p>content: {{blog.content|safe}} </p>
+<p>created At: {{blog.created_at}} </p>
+
+{% comment %}Default Value or null or None{% endcomment %}
+
+<p>Default Empty Value:{{empty_value|default:"No Value Provided"}} </p>
+<p>Default Empty Value:{{empty_value|default_if_none:"No Data"}} </p>
+    
+</body>
+</html>

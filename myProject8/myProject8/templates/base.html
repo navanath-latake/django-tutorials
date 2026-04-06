@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+    
+    {% comment %}
+        this title is dynamic title
+         <title> {% block title %} My Site {{% endblock %}} </title>
+    {% endcomment %}
+        
+    <title> {% block title %} My Site {% endblock %} </title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+   {% include 'navbar.html' %}
+   
+   <div class="content">
+    {% block content %}
+    {% endblock %}
+
+   </div>
+
+   <footer>
+    <p>&copy;2026 My Website</p>
+   </footer>
+   <script>src="{% static 'js/scripts.js' %}"</script>
+    
+</body>
+</html>

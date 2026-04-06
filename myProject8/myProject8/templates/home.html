@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %} Home Page {% endblock %}
+
+{% block content %}
+<h1>Welcome To Homepage</h1>
+<p>This is the home page.</p>
+
+<!-- Home Image -->
+<img src="{% static 'images/logo.png' %}" class="home-image" alt="Home Image">
+
+<!-- Login Form -->
+<form method="POST" class="login-form">
+    {% csrf_token %}
+
+    <input type="text" name="username" placeholder="Username" required>
+    <input type="password" name="password" placeholder="Password" required>
+
+    <!-- FIXED typo: sbmit → submit -->
+    <button type="submit">Login</button>
+</form>
+
+<!-- JS Button -->
+<button onclick="showAlert()" class="alert-btn">Click Me</button>
+{% endblock %}
